@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory
+public class PlayerInventory : IInventory
 {
     private Dictionary<ItemType, int> _itemQuantityPairs = new();
 

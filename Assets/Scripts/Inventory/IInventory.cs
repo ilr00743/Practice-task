@@ -1,4 +1,6 @@
+using System.Collections.Generic;
+
 public interface IInventory
 {
-    public void AddItem();
+    public void AddItems(List<Item> items);
 }

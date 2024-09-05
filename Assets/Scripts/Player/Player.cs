@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     {
         _camera = Camera.main;
         _inventory = new PlayerInventory();
-        _input = new PlayerInput(_camera, new MouseInput());
+        _input = new PlayerInput(_camera, new MobileInput());
     }
 
     private void Update()
