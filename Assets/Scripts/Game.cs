@@ -40,7 +40,7 @@ public class Game : MonoBehaviour
 
             ChestController chestController = new ChestController(chest, chestView.GetComponent<ChestView>());
 
-            chestController.ChestClicked += () => OnChestClicked(chestController);
+            chestController.ChestView.Clicked += () => OnChestClicked(chestController);
 
             _chestsControllers.Add(chestController);
 

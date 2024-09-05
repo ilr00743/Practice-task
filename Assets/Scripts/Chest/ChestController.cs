@@ -10,19 +10,10 @@ public class ChestController
 
     public ChestView ChestView => _chestView;
 
-    public event Action ChestClicked;
-
     public ChestController(ChestModel chest, ChestView chestView)
     {
         _chest = chest;
         _chestView = chestView;
-
-        _chestView.Clicked += OnChestClicked;
-    }
-
-    private void OnChestClicked()
-    {
-        ChestClicked?.Invoke();
     }
 
     public void Open()
