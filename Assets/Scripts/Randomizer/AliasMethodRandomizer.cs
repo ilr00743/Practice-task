@@ -68,9 +68,10 @@ public class AliasMethodRandomizer : IChestRandomizer
 
     public ChestModel ConfigurateRandomChest(ChestsConfig chestsConfig)
     {
-        var chestIndex = Next();
+        int chestIndex = Next();
 
-        var newChest = new ChestModel(chestsConfig.Chests[chestIndex].Name, chestsConfig.Chests[chestIndex].ChestPrefab, chestsConfig.Chests[chestIndex].DropChance);
+        ChestConfig chestConfig = chestsConfig.Chests[chestIndex];
+        var newChest = new ChestModel(chestConfig.Name, chestConfig.ChestPrefab, chestConfig.DropChance);
 
         return newChest;
     }

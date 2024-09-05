@@ -5,7 +5,7 @@ public class ItemRandomizer : IItemRandomizer
 {
     public void AddRandomItemsToChest(ChestModel chest, ChestsConfig chestsConfig)
     {
-        var currentConfig = chestsConfig.Chests.First(c => chest.Name == c.Name);
+        ChestConfig currentConfig = chestsConfig.Chests.First(c => chest.Name == c.Name);
 
         int itemMaxChance = currentConfig.Items.Max(i => i.DropChance);
 
