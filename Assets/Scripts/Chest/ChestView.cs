@@ -8,15 +8,10 @@ public class ChestView : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private FloatingText _popupPrefab;
 
-    private bool _isOpened = false;
-
     public event Action Clicked;
 
     public void Open()
     {
-        if (_isOpened) return;
-
-        _isOpened = true;
         _animator.SetTrigger("Open");
     }
 
