@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ChestController
@@ -27,12 +28,12 @@ public class ChestController
     public void Open()
     {
         _chestView.Open();
-        _chestView.SpawnAddedItemText(_chest.Items);
+        _chestView.SpawnAddedItemText(_chest.Items.ToList());
     }
 
     public List<Item> GetItems()
     {
-        return _chest.Items;
+        return _chest.Items.ToList();
     }
 
     public GameObject GetPrefab() 

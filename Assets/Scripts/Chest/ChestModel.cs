@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class ChestModel
 {
-    public string Name;
-    public GameObject ChestPrefab;
-    public float DropChance;
-    public List<Item> Items;
+    public string Name { get; private set; }
+    public GameObject ChestPrefab { get; private set; }
+    public float DropChance { get; private set; }
+    private List<Item> _items;
+
+    public IReadOnlyList<Item> Items => _items;
 
     public ChestModel() { }
 
@@ -24,8 +26,8 @@ public class ChestModel
             Debug.LogError("Item you try to add to chest is null");
         }
 
-        Items ??= new List<Item>();
+        _items ??= new List<Item>();
 
-        Items.Add(item);
+        _items.Add(item);
     }
 }
